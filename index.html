@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="sayi" style="width: 500px;height:100px;font-size: large;">
+    <br>
+    <button style="width: 50px;height:50px;margin-top: 10px;" onclick="çarp()">X</button>
+    <button style="width: 50px;height:50px;margin-top: 10px;margin-left: 20px;"onclick="topla()">+</button>
+    <button style="width: 50px;height:50px;margin-top: 10px;margin-left: 20px;"onclick="cıkar()">-</button>
+    <button style="width: 50px;height:50px;margin-top: 10px;margin-left: 20px;"onclick="böl()">/</button>
+    <button style="width: 50px;height:50px;margin-top: 10px;margin-left: 20px;"onclick="eşittir()">=</button>
+    <div id="kutu" style="color: gray;margin-top: -150px;margin-left: 10px;"></div>
+
+    <script>
+    var sayi1,sayi2,toplama,carp,bol,cıkart,toplam;
+        function çarp(){
+            sayi1=Number(document.getElementById("sayi").value);
+            carp=true;
+            bol=false;
+            cıkart=false;
+            toplama=false;
+            document.getElementById("kutu").innerHTML=sayi1+" x ";
+            document.getElementById("sayi").value=Number();
+        }
+        function topla(){
+            sayi1=Number(document.getElementById("sayi").value);
+            carp=false;
+            bol=false;
+            cıkart=false
+            toplama=true;
+            document.getElementById("kutu").innerHTML=sayi1+" + ";
+            document.getElementById("sayi").value=Number();
+        }
+        function cıkar(){
+            sayi1=Number(document.getElementById("sayi").value);
+            carp=false;
+            bol=false;
+            cıkart=true;
+            toplama=false;
+            document.getElementById("kutu").innerHTML=sayi1+" - ";
+            document.getElementById("sayi").value=Number();
+        }
+        function böl(){
+            sayi1=Number(document.getElementById("sayi").value);
+            carp=false;
+            bol=true;
+            cıkart=false
+            toplama=false;
+            document.getElementById("kutu").innerHTML=sayi1+" / ";
+            document.getElementById("sayi").value=Number();
+        }
+        function eşittir(){
+            sayi2=Number(document.getElementById("sayi").value);
+            if(toplama==true){
+                toplam=sayi1+sayi2;
+            }
+            if(carp==true){
+                toplam=sayi1*sayi2;
+            }
+            if(bol==true){
+                toplam=sayi1/sayi2;
+            }
+            if(cıkart==true){
+                toplam=sayi1-sayi2;
+            }
+            document.getElementById("kutu").innerHTML="";
+            document.getElementById("sayi").value=toplam
+        }
+    </script>
+</body>
+</html>
